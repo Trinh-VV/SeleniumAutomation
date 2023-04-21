@@ -19,75 +19,74 @@ public class TextBoxTest {
 	public String colorBoderRed = "#ff0000";
 
 	public void testTC1() {
-		tb.openWebBrowser();
 		String inputName = "Trinh";
 		String inputEmail = "Trinh@gmail.com";
 		String inputCurentAddress = "Hà Nội";
-		String inputPermanentAddressmail = "Hà Nội 2";
-
+		String inputPermanentAddress = "Hà Nội 2";
+		String inputData = inputName + inputEmail + inputCurentAddress + inputPermanentAddress;
+		// Open screen
+		tb.openWebBrowser();
 		tb.onClick(tagBtnElements);
 		tb.onClick(tagMenuTextbox);
+		// Input + submit data
 		tb.onInput(tagInputName, inputName);
 		tb.onInput(tagInputEmail, inputEmail);
 		tb.onInput(tagCurentAddress, inputCurentAddress);
-		tb.onInput(tagpermanentAddress, inputPermanentAddressmail);
+		tb.onInput(tagpermanentAddress, inputPermanentAddress);
 		tb.onScrollToView(tagBtnSubmit);
 		tb.onClick(tagBtnSubmit);
-
-		String actualName = getSubText(tb.onGetText(tagActualName));
-		String actualEmail = getSubText(tb.onGetText(tagActualEmail));
-		String actualCurentAddress = getSubText(tb.onGetText(tagActualCurentAddress));
-		String actualPermanentAddress = getSubText(tb.onGetText(tagActualPermanentAddress));
-
-		if (getSubText(actualName).equals(inputName))
-			System.out.println("Pass input name");
-		if (getSubText(actualEmail).equals(inputEmail))
-			System.out.println("Pass input email");
-		if (getSubText(actualCurentAddress).equals(inputCurentAddress))
-			System.out.println("Pass input current address");
-		if (getSubText(actualPermanentAddress).equals(inputPermanentAddressmail))
-			System.out.println("Pass input address");
+		// Get data submited
+		String actualName = getTextInputed(tb.onGetText(tagActualName));
+		String actualEmail = getTextInputed(tb.onGetText(tagActualEmail));
+		String actualCurentAddress = getTextInputed(tb.onGetText(tagActualCurentAddress));
+		String actualPermanentAddress = getTextInputed(tb.onGetText(tagActualPermanentAddress));
+		String actualData = actualName + actualEmail + actualCurentAddress + actualPermanentAddress;
+		if (inputData.equals(actualData)) {
+			System.out.println("Textbox TC1: Pass submit data");
+		} else {
+			System.out.println("Textbox TC1: Fail submit data");
+		}
 	}
-	
+
 	public void testTC2() throws InterruptedException {
-		tb.openWebBrowser();
 		String inputName = "Trinh";
 		String inputEmail = "trinh.com";
 		String inputCurentAddress = "Hà Nội";
 		String inputPermanentAddressmail = "Hà Nội 2";
-
+		// Open screen
+		tb.openWebBrowser();
 		tb.onClick(tagBtnElements);
 		tb.onClick(tagMenuTextbox);
+		// Input + submit data
 		tb.onInput(tagInputName, inputName);
 		tb.onInput(tagInputEmail, inputEmail);
 		tb.onInput(tagCurentAddress, inputCurentAddress);
 		tb.onInput(tagpermanentAddress, inputPermanentAddressmail);
 		tb.onScrollToView(tagBtnSubmit);
 		tb.onClick(tagBtnSubmit);
-		
-		Thread.sleep(3000);
-
-		String actualName = getSubText(tb.onGetText(tagActualName));
-		String actualEmail = getSubText(tb.onGetText(tagActualEmail));
-		String actualCurentAddress = getSubText(tb.onGetText(tagActualCurentAddress));
-		String actualPermanentAddress = getSubText(tb.onGetText(tagActualPermanentAddress));
-		
-		//Check boder red
+		Thread.sleep(2000);
+		// Get text inputed
+		String actualName = getTextInputed(tb.onGetText(tagActualName));
+		String actualEmail = getTextInputed(tb.onGetText(tagActualEmail));
+		String actualCurentAddress = getTextInputed(tb.onGetText(tagActualCurentAddress));
+		String actualPermanentAddress = getTextInputed(tb.onGetText(tagActualPermanentAddress));
+		String actualData = actualName + actualEmail + actualCurentAddress + actualPermanentAddress;
+		// Check boder red
 		String colorHex = tb.checkColorCode(tagBoderEmail, "border-bottom-color");
-		System.out.println(colorHex.equals(colorBoderRed) ? "TC2 - Pass: Red border is displayed"
-				: "TC2 - Fail: Red border isn't displayed");
-		System.out.println("mau: "+colorHex);
-		
-		//Check saved data
-		if (actualName != tb.IS_FAIL || actualEmail != tb.IS_FAIL || actualCurentAddress != tb.IS_FAIL
-				|| actualPermanentAddress != tb.IS_FAIL) {
-			System.out.println("TC2 - Fail: data is saved");
+		if (colorHex.equals(colorBoderRed)) {
+			System.out.println("Textbox TC2: Pass color boder correct");
 		} else {
-			System.out.println("TC2 - Pass: data is not saved");
+			System.out.println("Textbox TC2: Fail color boder incorrect");
+		}
+		// Check not saved data invalid
+		if (actualData.equals("")) {
+			System.out.println("Textbox TC2: Fail data is saved");
+		} else {
+			System.out.println("Textbox TC2: Pass data is not saved");
 		}
 	}
 
-	private String getSubText(String str) {
+	private String getTextInputed(String str) {
 		int i = str.indexOf(":");
 		return str.substring(i + 1, str.length());
 	}
