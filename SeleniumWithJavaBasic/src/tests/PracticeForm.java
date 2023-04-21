@@ -31,6 +31,7 @@ public class PracticeForm {
 	public String tagHobbiesSport = "//*[@id=\"hobbiesWrapper\"]/div[2]/div[1]";
 	public String tagHobbiesReading = "//*[@id=\"hobbiesWrapper\"]/div[2]/div[2]";
 	public String tagHobbiesMusic = "//*[@id=\"hobbiesWrapper\"]/div[2]/div[3]";
+	public String tagUploadPicture = "//input[@id='uploadPicture']";
 	public String tagInputAddress = "//*[@id=\"currentAddress\"]";
 	public String tagSelectState = "//div[@id='state']";
 	public String tagOptionsState = "//div[contains(@id,'react-select-3')]";
@@ -52,6 +53,8 @@ public class PracticeForm {
 		int inputDay = 17;
 		String inputSubject = "";
 		String inputHobbies = "Reading, Music";
+		String pathPicture = "C:\\Users\\Admin\\Desktop\\data_Third\\Photo\\2.png";
+		String pictureName = "2.png";
 		String inputAddress = "Hà nội, Việt Nam";
 		String inputState = "";
 		String inputCity = "";
@@ -71,6 +74,7 @@ public class PracticeForm {
 		// Scroll to end
 		((JavascriptExecutor) tb.driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		Thread.sleep(500);
+
 		// Input Date of Birth
 		tb.onClick(tagInputBirth);
 		tb.onClick(tagDropboxYear);
@@ -78,6 +82,7 @@ public class PracticeForm {
 		tb.onClick(tagDropboxMonth);
 		tb.inputDropbox(tagDropboxMonth, inputMonth);
 		tb.inputDay(tagDays, inputDay - 1);
+
 		// Input Subjects
 		tb.onClick(tagInputSubject);
 		tb.onInput("//input[@id='subjectsInput']", "m");
@@ -85,18 +90,25 @@ public class PracticeForm {
 		List<WebElement> listItems = tb.driver.findElements(By.xpath(tagListSubject));
 		inputSubject = listItems.get(0).getText();
 		listItems.get(0).click();
+
 		// Select Hobbies
 		tb.onClick(tagHobbiesReading);
 		tb.onClick(tagHobbiesMusic);
 		tb.onInput(tagInputAddress, inputAddress);
+
 		// * Picture <not done yet>
+		tb.onInput(tagUploadPicture, pathPicture);
+		Thread.sleep(1000);
+
 		// Select State-City
 		tb.onClick(tagSelectState);
 		inputState = tb.onSelectDropbox(tagOptionsState, 0);
 		tb.onClick(tagSelectCity);
 		inputCity = tb.onSelectDropbox(tagOptionsCity, 0);
+
 		// Submit
 		tb.onClick(tagBtnSubmit);
+
 		// Text input
 		SimpleDateFormat fmIn = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat fmOut = new SimpleDateFormat("dd MMMM,yyyy", Locale.US);
@@ -104,8 +116,9 @@ public class PracticeForm {
 		String inputDate = fmOut.format(date);
 		System.out.println(inputDate);
 		String strInput = inputFirstName + " " + inputLastName + inputEmail + inputGender + inputMobile + inputDate
-				+ inputSubject + inputHobbies + inputAddress + inputState + " " + inputCity;
+				+ inputSubject + inputHobbies + pictureName + inputAddress + inputState + " " + inputCity;
 		System.out.println("strInput: " + strInput);
+
 		// Text output
 		String strActual = "";
 		List<WebElement> dataSubmited = tb.driver.findElements(By.xpath("//tbody/tr"));
@@ -116,6 +129,7 @@ public class PracticeForm {
 			strActual += val;
 		}
 		System.out.println("strOutput: " + strActual);
+
 		// Check data submit
 		if (strInput.equals(strActual)) {
 			System.out.println("Form TC1: Pass");
