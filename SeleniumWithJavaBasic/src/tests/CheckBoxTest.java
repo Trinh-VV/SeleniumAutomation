@@ -7,8 +7,8 @@ import common.TestBase;
 
 public class CheckBoxTest {
 	TestBase tb = new TestBase();
-	public String tagBtnElements = "//div[@class ='category-cards']/div[1]";
-	public String tagMenuCheckbox = "//div[@class='left-pannel']/div/div[1]/div/ul/li[2]";
+	public String tagBtnElements = "//h5[text()='Elements']/ancestor::div[3]";
+	public String tagMenuCheckbox = "//span[text()='Check Box']/parent::li";
 	public String tagHomeCheckbox = "//span[@class='rct-checkbox']";
 	public String tagResultSelected = "//div[@id='result']";
 	public String tagBtnXtend = "//button[@aria-label='Toggle']";

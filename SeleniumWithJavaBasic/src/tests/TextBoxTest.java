@@ -4,8 +4,8 @@ import common.TestBase;
 
 public class TextBoxTest {
 	TestBase tb = new TestBase();
-	public String tagBtnElements = "//div[@class ='category-cards']/div[1]";
-	public String tagMenuTextbox = "//div[@class='left-pannel']/div/div[1]/div/ul/li[1]";
+	public String tagBtnElements = "//h5[text()='Elements']/ancestor::div[3]";
+	public String tagMenuTextbox = "//span[text()='Text Box']/parent::li";
 	public String tagInputName = "//input[@id='userName']";
 	public String tagInputEmail = "//input[@id='userEmail']";
 	public String tagCurentAddress = "//textarea[@id='currentAddress']";

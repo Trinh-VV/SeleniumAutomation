@@ -9,8 +9,8 @@ import common.TestBase;
 
 public class WebTableTest {
 	TestBase tb = new TestBase();
-	public String tagBtnElements = "//div[@class ='category-cards']/div[1]";
-	public String tagMenuWebTable = "//div[@class='left-pannel']/div/div[1]/div/ul/li[4]";
+	public String tagBtnElements = "//h5[text()='Elements']/ancestor::div[3]";
+	public String tagMenuWebTable = "//span[text()='Web Tables']/parent::li";
 	public String tagBoxSearch = "//input[@id='searchBox']";
 	public String tagListData = "//div[@role='row' and contains(@class,'rt-tr ') and not(contains(@class,'padRow'))]";
 	public String tagDeleteFirst = "//*[@id='delete-record-";
