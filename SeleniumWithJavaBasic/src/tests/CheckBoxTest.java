@@ -7,12 +7,12 @@ import common.TestBase;
 
 public class CheckBoxTest {
 	TestBase tb = new TestBase();
-	public String tagBtnElements = "//*[@id=\"app\"]/div/div/div[2]/div/div[1]";
-	public String tagMenuCheckbox = "//*[@id=\"item-1\"]";
-	public String tagHomeCheckbox = "//*[@id=\"tree-node\"]/ol/li/span/label/span[1]";
-	public String tagResultSelected = "//*[@id=\"result\"]";
-	public String tagBtnXtend = "//*[@id=\"tree-node\"]/ol/li/span/button";
-	public String tagOptionLevel2 = "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div/ol/li/ol";
+	public String tagBtnElements = "//div[@class ='category-cards']/div[1]";
+	public String tagMenuCheckbox = "//div[@class='left-pannel']/div/div[1]/div/ul/li[2]";
+	public String tagHomeCheckbox = "//span[@class='rct-checkbox']";
+	public String tagResultSelected = "//div[@id='result']";
+	public String tagBtnXtend = "//button[@aria-label='Toggle']";
+	public String tagOptionLevel2 = "//div[@id='tree-node']/ol/li/ol";
 
 	public void TestTC1() throws InterruptedException {
 		String expectedText = "You have selected : home desktop notes commands documents workspace react angular veu office public private classified general downloads wordFile excelFile";
@@ -20,9 +20,11 @@ public class CheckBoxTest {
 		tb.openWebBrowser();
 		tb.onClick(tagBtnElements);
 		tb.onClick(tagMenuCheckbox);
+		
 		// Check default home check box is unchecked
 		boolean homeStatus = tb.checkStatusCheckbox(tagHomeCheckbox);
 		System.out.println(homeStatus ? "Checkbox TC1_1: Fail default is ON" : "Checkbox TC1_1: Pass default is OFF");
+		
 		// Check text is shown
 		tb.onClick(tagHomeCheckbox);
 		String actualText = tb.onGetText(tagResultSelected).replace("\n", " ");
@@ -32,6 +34,7 @@ public class CheckBoxTest {
 			System.out.println("Checkbox TC1_2: Fail shown text is incorrect");
 		}
 		Thread.sleep(1000);
+		
 		// Check click Button [>]
 		tb.onClick(tagBtnXtend);
 		WebElement element = tb.driver.findElement(By.xpath(tagOptionLevel2));

@@ -4,18 +4,18 @@ import common.TestBase;
 
 public class TextBoxTest {
 	TestBase tb = new TestBase();
-	public String tagBtnElements = "//*[@id=\"app\"]/div/div/div[2]/div/div[1]";
-	public String tagMenuTextbox = "//*[@id=\"item-0\"]";
-	public String tagInputName = "//*[@id=\"userName\"]";
-	public String tagInputEmail = "//*[@id=\"userEmail\"]";
-	public String tagCurentAddress = "//*[@id=\"currentAddress\"]";
-	public String tagpermanentAddress = "//*[@id=\"permanentAddress\"]";
-	public String tagBtnSubmit = "//*[@id=\"submit\"]";
-	public String tagActualName = "//*[@id=\"name\"]";
-	public String tagActualEmail = "//*[@id=\"email\"]";
-	public String tagActualCurentAddress = "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[6]/div/p[3]";
-	public String tagActualPermanentAddress = "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[6]/div/p[4]";
-	public String tagBoderEmail = "//*[@id=\"userEmail\"]";
+	public String tagBtnElements = "//div[@class ='category-cards']/div[1]";
+	public String tagMenuTextbox = "//div[@class='left-pannel']/div/div[1]/div/ul/li[1]";
+	public String tagInputName = "//input[@id='userName']";
+	public String tagInputEmail = "//input[@id='userEmail']";
+	public String tagCurentAddress = "//textarea[@id='currentAddress']";
+	public String tagpermanentAddress = "//textarea[@id='permanentAddress']";
+	public String tagBtnSubmit = "//button[@id='submit']";
+	public String tagActualName = "//p[@id='name']";
+	public String tagActualEmail = "//p[@id='email']";
+	public String tagActualCurentAddress = "//p[@id='currentAddress']";
+	public String tagActualPermanentAddress = "//p[@id='permanentAddress']";
+	public String tagBoderEmail = "//*[@id='userEmail']";
 	public String colorBoderRed = "#ff0000";
 
 	public void testTC1() {
@@ -36,6 +36,7 @@ public class TextBoxTest {
 		tb.onScrollToView(tagBtnSubmit);
 		tb.onClick(tagBtnSubmit);
 		// Get data submited
+
 		String actualName = getTextInputed(tb.onGetText(tagActualName));
 		String actualEmail = getTextInputed(tb.onGetText(tagActualEmail));
 		String actualCurentAddress = getTextInputed(tb.onGetText(tagActualCurentAddress));

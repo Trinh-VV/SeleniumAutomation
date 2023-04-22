@@ -15,29 +15,28 @@ import common.TestBase;
 
 public class PracticeForm {
 	TestBase tb = new TestBase();
-	public String tagBtnForm = "//*[@id=\"app\"]/div/div/div[2]/div/div[2]";
-	public String tagMenuForm = "//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/div[2]/div/ul";
-	public String tagInputFirstName = "//*[@id=\"firstName\"]";
-	public String tagInputLastName = "//*[@id=\"lastName\"]";
-	public String tagInputEmail = "//*[@id=\"userEmail\"]";
-	public String tagGenderMale = "//*[@id=\"genterWrapper\"]/div[2]/div[1]";
-	public String tagGenderFemale = "//*[@id=\"genterWrapper\"]/div[2]/div[2]";
-	public String tagGenderOther = "//*[@id=\"genterWrapper\"]/div[2]/div[3]";
-	public String tagInputMobile = "//*[@id=\"userNumber\"]";
+	public String tagBtnForm = "//div[@class ='category-cards']/div[2]";
+	public String tagMenuForm = "//div[@class='left-pannel']/div/div[2]/div/ul/li[1]";
+	public String tagInputFirstName = "//input[@id='firstName']";
+	public String tagInputLastName = "//input[@id='lastName']";
+	public String tagInputEmail = "//input[@id='userEmail']";
+	public String tagGenderMale = "//div[@id='genterWrapper']/div[2]/div[1]";
+	public String tagGenderFemale = "//div[@id='genterWrapper']/div[2]/div[2]";
+	public String tagGenderOther = "//div[@id='genterWrapper']/div[2]/div[3]";
+	public String tagInputMobile = "//input[@id='userNumber']";
 	public String tagInputBirth = "//input[@id='dateOfBirthInput']";
-	public String tagInputedBirth = "//input[@id='dateOfBirthInput']";
 	public String tagInputSubject = "//div[@id='subjectsContainer']";
 	public String tagListSubject = "//div[contains(@id,'react-select-2-option')]";
-	public String tagHobbiesSport = "//*[@id=\"hobbiesWrapper\"]/div[2]/div[1]";
-	public String tagHobbiesReading = "//*[@id=\"hobbiesWrapper\"]/div[2]/div[2]";
-	public String tagHobbiesMusic = "//*[@id=\"hobbiesWrapper\"]/div[2]/div[3]";
+	public String tagHobbiesSport = "//*[@id='hobbiesWrapper']/div[2]/div[1]";
+	public String tagHobbiesReading = "//*[@id='hobbiesWrapper']/div[2]/div[2]";
+	public String tagHobbiesMusic = "//*[@id='hobbiesWrapper']/div[2]/div[3]";
 	public String tagUploadPicture = "//input[@id='uploadPicture']";
-	public String tagInputAddress = "//*[@id=\"currentAddress\"]";
+	public String tagInputAddress = "//textarea[@id='currentAddress']";
 	public String tagSelectState = "//div[@id='state']";
 	public String tagOptionsState = "//div[contains(@id,'react-select-3')]";
 	public String tagSelectCity = "//div[@id='city']";
 	public String tagOptionsCity = "//div[contains(@id,'react-select-4')]";
-	public String tagBtnSubmit = "//*[@id=\"userForm\"]/div[11]/div";
+	public String tagBtnSubmit = "//button[@id='submit']";
 	public String tagDropboxYear = "//select[@class='react-datepicker__year-select']";
 	public String tagDropboxMonth = "//select[@class='react-datepicker__month-select']";
 	public String tagDays = "//div[@role ='option' and not(contains(@class,'outside-month'))]";
@@ -96,7 +95,7 @@ public class PracticeForm {
 		tb.onClick(tagHobbiesMusic);
 		tb.onInput(tagInputAddress, inputAddress);
 
-		// * Picture <not done yet>
+		// Select Picture
 		tb.onInput(tagUploadPicture, pathPicture);
 		Thread.sleep(1000);
 
@@ -114,10 +113,8 @@ public class PracticeForm {
 		SimpleDateFormat fmOut = new SimpleDateFormat("dd MMMM,yyyy", Locale.US);
 		Date date = fmIn.parse(inputDay + "/" + inputMonth + "/" + inputYear);
 		String inputDate = fmOut.format(date);
-		System.out.println(inputDate);
 		String strInput = inputFirstName + " " + inputLastName + inputEmail + inputGender + inputMobile + inputDate
 				+ inputSubject + inputHobbies + pictureName + inputAddress + inputState + " " + inputCity;
-		System.out.println("strInput: " + strInput);
 
 		// Text output
 		String strActual = "";
@@ -128,7 +125,6 @@ public class PracticeForm {
 			String val = childs.get(1).getText();
 			strActual += val;
 		}
-		System.out.println("strOutput: " + strActual);
 
 		// Check data submit
 		if (strInput.equals(strActual)) {
