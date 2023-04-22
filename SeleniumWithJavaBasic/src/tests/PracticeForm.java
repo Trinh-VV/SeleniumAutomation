@@ -118,12 +118,9 @@ public class PracticeForm {
 
 		// Text output
 		String strActual = "";
-		List<WebElement> dataSubmited = tb.driver.findElements(By.xpath("//tbody/tr"));
+		List<WebElement> dataSubmited = tb.driver.findElements(By.xpath("//tbody/tr/td[2]"));
 		for (int i = 0; i < dataSubmited.size(); i++) {
-			By tagName = new ByTagName("td");
-			List<WebElement> childs = dataSubmited.get(i).findElements(tagName);
-			String val = childs.get(1).getText();
-			strActual += val;
+			strActual += dataSubmited.get(i).getText();
 		}
 
 		// Check data submit
