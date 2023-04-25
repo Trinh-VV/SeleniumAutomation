@@ -20,6 +20,7 @@ public class TestBase {
 		System.setProperty("webdriver.chrome.driver", PATH_WEBDRIVER);
 		driver = new ChromeDriver();
 		driver.get("https://demoqa.com/");
+		driver.manage().window().maximize();
 	}
 
 	public void onClick(String tagXpath) {
