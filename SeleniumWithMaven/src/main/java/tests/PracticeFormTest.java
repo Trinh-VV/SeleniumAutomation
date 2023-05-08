@@ -25,13 +25,13 @@ public class PracticeFormTest extends TestCase {
 	}
 
 	@Test(priority = 1, description = "TC1 - Submit successfully")
-	public void submitSuccessfully() throws InterruptedException, ParseException {
-		Assert.assertEquals(formPage.inputTextForm("Vo", "Trinh", "Male", "0123456789"), true);
+	public void submitSuccessfully() throws ParseException, InterruptedException{
+		Assert.assertTrue(formPage.inputTextForm("Vo", "Trinh", "Male", "0123456789"));
 	}
 
 	@Test(priority = 2, description = "TC2 - Submit fail")
-	public void submitFail() throws InterruptedException, ParseException {
+	public void submitFail() throws ParseException, InterruptedException {
 		formPage.refreshCurrentPage();
-		Assert.assertEquals(formPage.inputTextForm("Vo", "Trinh", "Male", ""), true);
+		Assert.assertTrue(formPage.inputTextForm("Vo", "Trinh", "Male", ""));
 	}
 }

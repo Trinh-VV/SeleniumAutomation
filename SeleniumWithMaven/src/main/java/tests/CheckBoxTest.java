@@ -26,10 +26,10 @@ public class CheckBoxTest extends TestCase {
 	public void vertifyCheckBox() throws InterruptedException {
 
 		// TC1/1 The [Home] checkBox is unchecked
-		Assert.assertEquals(checkBoxPage.isSelected("//input[@id='tree-node-home']"), false);
+		Assert.assertFalse(checkBoxPage.isSelectedCheckBoxHome());
 
 		// TC1/2 Text shown is correct
-		Assert.assertTrue(checkBoxPage.checkTextShown("//div[@id='result']"));
+		Assert.assertTrue(checkBoxPage.checkTextShown());
 
 		// TC1/3 All check boxes are displayed and checked
 		Assert.assertTrue(checkBoxPage.checkSelectedCheckBox());

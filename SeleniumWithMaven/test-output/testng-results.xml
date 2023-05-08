@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-05T07:34:04 ICT" name="Default suite" finished-at="2023-05-05T07:34:24 ICT" duration-ms="19515">
+  <suite started-at="2023-05-08T11:19:40 ICT" name="Default suite" finished-at="2023-05-08T11:19:55 ICT" duration-ms="14977">
     <groups>
     </groups>
-    <test started-at="2023-05-05T07:34:04 ICT" name="Default test" finished-at="2023-05-05T07:34:24 ICT" duration-ms="19515">
-      <class name="tests.WebTableTest">
-        <test-method is-config="true" signature="openTextBoxPage()[pri:0, instance:tests.WebTableTest@74751b3]" started-at="2023-05-05T07:34:04 ICT" name="openTextBoxPage" finished-at="2023-05-05T07:34:18 ICT" duration-ms="13512" status="PASS">
+    <test started-at="2023-05-08T11:19:40 ICT" name="Default test" finished-at="2023-05-08T11:19:55 ICT" duration-ms="14977">
+      <class name="tests.PracticeFormTest">
+        <test-method is-config="true" signature="openTextBoxPage()[pri:0, instance:tests.PracticeFormTest@74751b3]" started-at="2023-05-08T11:19:40 ICT" name="openTextBoxPage" finished-at="2023-05-08T11:19:49 ICT" duration-ms="8574" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTextBoxPage -->
-        <test-method signature="submitSuccessfully()[pri:1, instance:tests.WebTableTest@74751b3]" started-at="2023-05-05T07:34:18 ICT" name="submitSuccessfully" description="TC1 - Search data" finished-at="2023-05-05T07:34:18 ICT" duration-ms="570" status="PASS">
+        <test-method signature="submitSuccessfully()[pri:1, instance:tests.PracticeFormTest@74751b3]" started-at="2023-05-08T11:19:49 ICT" name="submitSuccessfully" description="TC1 - Submit successfully" finished-at="2023-05-08T11:19:51 ICT" duration-ms="2354" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitSuccessfully -->
-        <test-method signature="submitFail()[pri:2, instance:tests.WebTableTest@74751b3]" started-at="2023-05-05T07:34:18 ICT" name="submitFail" description="TC2 - Add a record" finished-at="2023-05-05T07:34:24 ICT" duration-ms="5376" status="PASS">
+        <test-method signature="submitFail()[pri:2, instance:tests.PracticeFormTest@74751b3]" started-at="2023-05-08T11:19:51 ICT" name="submitFail" description="TC2 - Submit fail" finished-at="2023-05-08T11:19:55 ICT" duration-ms="4024" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitFail -->
-      </class> <!-- tests.WebTableTest -->
+      </class> <!-- tests.PracticeFormTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

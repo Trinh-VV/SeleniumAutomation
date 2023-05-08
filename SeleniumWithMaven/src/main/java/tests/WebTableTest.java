@@ -23,12 +23,12 @@ public class WebTableTest extends TestCase {
 	}
 
 	@Test(priority = 1, description = "TC1 - Search data")
-	public void submitSuccessfully() throws InterruptedException {
+	public void submitSuccessfully() {
 		Assert.assertTrue(webTablePage.checkSearchTable("t"));
 	}
 
 	@Test(priority = 2, description = "TC2 - Add a record")
-	public void submitFail() throws InterruptedException {
-		Assert.assertEquals(webTablePage.addNewRecord(), false);
+	public void submitFail() {
+		Assert.assertFalse(webTablePage.addNewRecord("Vo", "Trinh", "trinh@gmail.com", "30", "1000", "QA"));
 	}
 }

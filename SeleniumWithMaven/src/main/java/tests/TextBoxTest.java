@@ -24,11 +24,11 @@ public class TextBoxTest extends TestCase {
 
 	@Test(priority = 1, description = "TC1 - Submit valid data")
 	public void submitSuccessfully() throws InterruptedException {
-		Assert.assertEquals(textBoxPage.submitTextBox("ABC", "abc@gmail.com", "Ha noi", "Viet Nam"), true);
+		Assert.assertTrue(textBoxPage.submitTextBox("ABC", "abc@gmail.com", "Ha noi", "Viet Nam"));
 	}
 
 	@Test(priority = 2, description = "TC2 - Submit invalid format email")
 	public void submitFail() throws InterruptedException {
-		Assert.assertEquals(textBoxPage.submitTextBox("ABC", "abcgmail.com", "Ha noi", "Viet Nam"), true);
+		Assert.assertTrue(textBoxPage.submitTextBox("ABC", "abcgmail.com", "Ha noi", "Viet Nam"));
 	}
 }
