@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-08T11:19:40 ICT" name="Default suite" finished-at="2023-05-08T11:19:55 ICT" duration-ms="14977">
+  <suite started-at="2023-05-08T16:05:39 ICT" name="Default suite" finished-at="2023-05-08T16:05:49 ICT" duration-ms="10282">
     <groups>
     </groups>
-    <test started-at="2023-05-08T11:19:40 ICT" name="Default test" finished-at="2023-05-08T11:19:55 ICT" duration-ms="14977">
-      <class name="tests.PracticeFormTest">
-        <test-method is-config="true" signature="openTextBoxPage()[pri:0, instance:tests.PracticeFormTest@74751b3]" started-at="2023-05-08T11:19:40 ICT" name="openTextBoxPage" finished-at="2023-05-08T11:19:49 ICT" duration-ms="8574" status="PASS">
+    <test started-at="2023-05-08T16:05:39 ICT" name="Default test" finished-at="2023-05-08T16:05:49 ICT" duration-ms="10282">
+      <class name="tests.TextBoxTest">
+        <test-method is-config="true" signature="openTextBoxPage()[pri:0, instance:tests.TextBoxTest@74751b3]" started-at="2023-05-08T16:05:39 ICT" name="openTextBoxPage" finished-at="2023-05-08T16:05:47 ICT" duration-ms="8824" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTextBoxPage -->
-        <test-method signature="submitSuccessfully()[pri:1, instance:tests.PracticeFormTest@74751b3]" started-at="2023-05-08T11:19:49 ICT" name="submitSuccessfully" description="TC1 - Submit successfully" finished-at="2023-05-08T11:19:51 ICT" duration-ms="2354" status="PASS">
+        <test-method signature="submitSuccessfully()[pri:1, instance:tests.TextBoxTest@74751b3]" started-at="2023-05-08T16:05:48 ICT" name="submitSuccessfully" description="TC1 - Submit valid data" finished-at="2023-05-08T16:05:48 ICT" duration-ms="813" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitSuccessfully -->
-        <test-method signature="submitFail()[pri:2, instance:tests.PracticeFormTest@74751b3]" started-at="2023-05-08T11:19:51 ICT" name="submitFail" description="TC2 - Submit fail" finished-at="2023-05-08T11:19:55 ICT" duration-ms="4024" status="PASS">
+        <test-method signature="submitFail()[pri:2, instance:tests.TextBoxTest@74751b3]" started-at="2023-05-08T16:05:48 ICT" name="submitFail" description="TC2 - Submit invalid format email" finished-at="2023-05-08T16:05:49 ICT" duration-ms="598" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitFail -->
-      </class> <!-- tests.PracticeFormTest -->
+      </class> <!-- tests.TextBoxTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
