@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Test Multi Browser]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Chrome(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="tests.TextBoxTest">
+      <class name="tests.PracticeFormTest">
         <methods>
-          <include name="openTextBoxPage"/>
-          <include name="submitSuccessfully"/>
+          <include name="openWebsite"/>
           <include name="submitFail"/>
+          <include name="submitSuccessfully"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- tests.TextBoxTest -->
+      </class> <!-- tests.PracticeFormTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Chrome(failed) -->
+</suite> <!-- Failed suite [Test Multi Browser] -->

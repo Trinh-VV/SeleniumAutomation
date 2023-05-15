@@ -1,10 +1,6 @@
 
 package common;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
 import java.time.Duration;
 import java.util.List;
 
@@ -13,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -44,8 +41,8 @@ public class TestBase {
 	}
 
 	public WebElement waitForDisplay(long timeOutInSecond, By elementLocator) {
-		return new WebDriverWait(dr, Duration.ofSeconds(timeOutInSecond))
-				.until(driver -> dr.findElement(elementLocator));
+		return new WebDriverWait(dr, Duration.ofSeconds(timeOutInSecond)).until(dri -> dr.findElement(elementLocator));
+		
 	}
 
 	public void waitForTime(long timeOutInMilliSecond) {
@@ -66,6 +63,12 @@ public class TestBase {
 
 	public By getLocatorByClass(String className) {
 		return By.className(className);
+	}
+
+	public void zoomScreen() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) dr;
+		js.executeScript("document.body.style.zoom='60%'");
+		Thread.sleep(1000);
 	}
 
 	public List<WebElement> getListElement(By locator) {
@@ -98,12 +101,19 @@ public class TestBase {
 
 	public boolean checkFormatEmail(String email) {
 		// Regex error?????
-		return email.equals(".") & email.equals("@");
+		return email.contains(".") & email.contains("@");
 	}
 
 	public void uploadFile(By locator, String pathFile) {
 		waitForDisplay(SHORT_TIME_OUT, locator);
 		getElement(locator).sendKeys(pathFile);
+	}
+	
+	public boolean checkColorBorderAfterFinishAniation(By locator, String atributeName, long timeSecond, String excpectedColorCode ) {
+		WebElement element = getElement(locator);
+		WebDriverWait wait = new WebDriverWait(dr, Duration.ofSeconds(timeSecond));
+		wait.until(ExpectedConditions.attributeToBe(element, atributeName, excpectedColorCode));
+		return element.getCssValue(atributeName).equals(excpectedColorCode);
 	}
 
 	public void scrollToEndPage() {
@@ -138,6 +148,9 @@ public class TestBase {
 		dr.navigate().refresh();
 	}
 	
-
+	public void zoomInPage() {
+		JavascriptExecutor js = (JavascriptExecutor) dr;
+		js.executeScript("document.body.style.zoom='65%';");
+	}
 
 }

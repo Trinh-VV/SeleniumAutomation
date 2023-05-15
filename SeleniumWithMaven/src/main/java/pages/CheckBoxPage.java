@@ -25,8 +25,6 @@ public class CheckBoxPage extends Page {
 		// Check text shown
 		String textShown = testBase.getTextElement(locTextResult).replace("\n", " ");
 		String textExpected = "You have selected : home desktop notes commands documents workspace react angular veu office public private classified general downloads wordFile excelFile";
-		System.out.println(textShown);
-		System.out.println(textExpected);
 		return textShown.equals(textExpected);
 	}
 

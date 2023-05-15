@@ -37,7 +37,6 @@ public class PracticeFormPage extends Page {
 	public By locStateList = By.xpath("//div[contains(@id,'react-select-3')]");
 	public By locCity = By.id("city");
 	public By locCityList = By.xpath("//div[contains(@id,'react-select-4')]");
-
 	public PracticeFormPage(WebDriver dr) {
 		super(dr);
 	}
@@ -47,7 +46,7 @@ public class PracticeFormPage extends Page {
 		boolean result = false;
 		String genderFirst = "//label[text()='";
 		String genderLast = "']/parent::div";
-
+		
 		// Input first name, last name, email, gender, mobile number
 		testBase.sendKeyToElement(locFirstName, firstName);
 		testBase.sendKeyToElement(locLastName, lastName);

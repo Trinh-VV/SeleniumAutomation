@@ -1,0 +1,10 @@
+element_name,locator_type,locator_value
+fullName,id,userName
+email,id,userEmail
+currentAddress,xpath,//textArea[@id='currentAddress']
+permanentAddress,xpath,//textArea[@id='permanentAddress']
+submit,xpath,//button[@id='submit']
+fullName_output,xpath,//p[@id='name']
+email_output,xpath,//p[@id='email']
+currentAddress_output,xpath,//p[@id='currentAddress']
+permanentAddress_output,xpath,//p[@id='permanentAddress']

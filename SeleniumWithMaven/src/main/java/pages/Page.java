@@ -14,5 +14,9 @@ public class Page {
 	public Page(WebDriver dr) {
 		this.driver = dr;
 	}
+	
+	public void clearData() {
+		driver.navigate().refresh();
+	}
 
 }
