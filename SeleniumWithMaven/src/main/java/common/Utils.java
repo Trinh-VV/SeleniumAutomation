@@ -28,7 +28,7 @@ public class Utils {
 		return result;
 	}
 
-	public static List<String[]> readTestData(String csvFilePath) {
+	public static List<String[]> getDataFromCsv(String csvFilePath) {
 		List<String[]> testData = new ArrayList<>();
 		String line;
 
@@ -43,7 +43,7 @@ public class Utils {
 		return testData;
 	}
 
-	public static Object[][] getTestData(String filePath, String sheetName) throws IOException {
+	public static String[][] getDataFromExcel(String filePath, String sheetName) throws IOException {
 		// Load Excel file
 		File file = new File(filePath);
 		FileInputStream inputStream = new FileInputStream(file);
@@ -57,7 +57,7 @@ public class Utils {
 		int columnCount = sheet.getRow(0).getLastCellNum();
 
 		// Create 2D object array to store data
-		Object[][] data = new Object[rowCount][columnCount];
+		String[][] data = new String[rowCount][columnCount];
 
 		// Loop through rows and columns to get data
 		for (int i = 0; i < rowCount; i++) {

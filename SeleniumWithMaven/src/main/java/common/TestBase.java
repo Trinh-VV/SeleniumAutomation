@@ -65,12 +65,6 @@ public class TestBase {
 		return By.className(className);
 	}
 
-	public void zoomScreen() throws InterruptedException {
-		JavascriptExecutor js = (JavascriptExecutor) dr;
-		js.executeScript("document.body.style.zoom='60%'");
-		Thread.sleep(1000);
-	}
-
 	public List<WebElement> getListElement(By locator) {
 		return dr.findElements(locator);
 	}

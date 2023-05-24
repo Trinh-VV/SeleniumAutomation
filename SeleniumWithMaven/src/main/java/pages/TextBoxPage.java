@@ -1,11 +1,10 @@
 package pages;
 
-import java.util.List;
+import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import common.LocatorManager;
 import common.TestBase;
 import common.Utils;
 
@@ -13,20 +12,19 @@ public class TextBoxPage extends Page {
 
 	TestBase testBase = new TestBase(driver);
 	public static final String PATH_DATA_TESTCASES = "src\\main\\resources\\TestCasesTextBox.csv";
+	public static final String PATH_DATA_TEST = "test_data\\TestData.xlsx";
 	public static final String PATH_DATA_LOCATORS = "src\\main\\resources\\LocatorsTextBox.csv";
 	public static final String COLOR_RED_CODE = "rgba(255, 0, 0, 1)";
 	public static final String ATRIBUTE_NAME = "border-bottom-color";
-
-	LocatorManager locatorManager = new LocatorManager(PATH_DATA_LOCATORS);
-	public By locFullName = locatorManager.getByLocator("fullName");
-	public By locEmail = locatorManager.getByLocator("email");
-	public By locCurrentAddress = locatorManager.getByLocator("currentAddress");
-	public By locPermanentAddress = locatorManager.getByLocator("permanentAddress");
-	public By locFullName_Output = locatorManager.getByLocator("fullName_output");
-	public By locEmail_Output = locatorManager.getByLocator("email_output");
-	public By locCurrentAddress_Output = locatorManager.getByLocator("currentAddress_output");
-	public By locPermanentAddress_Output = locatorManager.getByLocator("permanentAddress_output");
-	public By locSubmit = locatorManager.getByLocator("submit");
+	public By locFullName = testBase.getLocatorById("userName");
+	public By locEmail = testBase.getLocatorById("userEmail");
+	public By locCurrentAddress = testBase.getLocatorByXpath("//textarea[@id='currentAddress']");
+	public By locPermanentAddress = testBase.getLocatorByXpath("//textarea[@id='permanentAddress']");
+	public By locFullName_Output = testBase.getLocatorById("name");
+	public By locEmail_Output = testBase.getLocatorById("email");
+	public By locCurrentAddress_Output = testBase.getLocatorByXpath("//p[@id='currentAddress']");
+	public By locPermanentAddress_Output = testBase.getLocatorByXpath("//p[@id='permanentAddress']");
+	public By locSubmit = testBase.getLocatorById("submit");
 
 	String name = "";
 	String email = "";
@@ -37,9 +35,8 @@ public class TextBoxPage extends Page {
 		super(dr);
 	}
 	
-	public boolean checkSubmitData(String idTestCase) {
+	public boolean checkSubmitData(String idTestCase) throws IOException {
 		boolean result = true;
-		System.out.println("__" + locatorManager.getByLocator("fullName"));
 		readDataTestCase(idTestCase);
 
 		// Input data
@@ -65,14 +62,14 @@ public class TextBoxPage extends Page {
 		return result;
 	}
 
-	public void readDataTestCase(String testCaseId) {
-		List<String[]> testData = Utils.readTestData(PATH_DATA_TESTCASES);
-		for (int i = 0; i < testData.size(); i++) {
-			if (testCaseId.substring(2).equals(i + "")) {
-				name = testData.get(i)[1];
-				email = testData.get(i)[2];
-				currentAddress = testData.get(i)[3];
-				permanentAddress = testData.get(i)[4];
+	public void readDataTestCase(String testCaseId) throws IOException {
+		String[][] arrDataExcel = Utils.getDataFromExcel(PATH_DATA_TEST,"TextBoxTest");
+		for (int i = 0; i < arrDataExcel.length; i++) {
+			if (arrDataExcel[i][0].equals(testCaseId)) {
+				name = arrDataExcel[i][1];
+				email = arrDataExcel[i][2];
+				currentAddress = arrDataExcel[i][3];
+				permanentAddress = arrDataExcel[i][4];
 			}
 		}
 	}

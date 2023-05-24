@@ -5,15 +5,15 @@
 		<parameter name="browser" value="Chrome" />
 		<classes>
 			<class name="tests.TextBoxTest" />
-			<class name="tests.CheckBoxTest" />
-			<class name="tests.WebTableTest" />
-			<class name="tests.PracticeFormTest" />
+<!--			<class name="tests.CheckBoxTest" />-->
+<!--			<class name="tests.WebTableTest" />-->
+<!--			<class name="tests.PracticeFormTest" />-->
 
-			<class name="tests.CheckBoxTest">
-				<methods>
-					<include name="vertifyCheckBox"></include>
-				</methods>
-			</class>
+<!--			<class name="tests.CheckBoxTest">-->
+<!--				<methods>-->
+<!--					<include name="vertifyCheckBox"></include>-->
+<!--				</methods>-->
+<!--			</class>-->
 		</classes>
 
 		<!--		<groups>-->

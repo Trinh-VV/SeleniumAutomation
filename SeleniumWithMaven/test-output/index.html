@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Test_Multi_Browser" class="navigator-link">
-              <span class="suite-name border-failed">Test Multi Browser</span>
+              <span class="suite-name border-passed">Test Multi Browser</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Test_Multi_Browser" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,26 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 2 failed,   </span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Test_Multi_Browser" class="hide-methods failed suite-Test_Multi_Browser"> (hide)</a> <!-- hide-methods failed suite-Test_Multi_Browser -->
-                      <a href="#" panel-name="suite-Test_Multi_Browser" class="show-methods failed suite-Test_Multi_Browser"> (show)</a> <!-- show-methods failed suite-Test_Multi_Browser -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Test_Multi_Browser" class="hide-methods passed suite-Test_Multi_Browser"> (hide)</a> <!-- hide-methods passed suite-Test_Multi_Browser -->
+                      <a href="#" panel-name="suite-Test_Multi_Browser" class="show-methods passed suite-Test_Multi_Browser"> (show)</a> <!-- show-methods passed suite-Test_Multi_Browser -->
                     </span>
-                    <div class="method-list-content failed suite-Test_Multi_Browser">
+                    <div class="method-list-content passed suite-Test_Multi_Browser">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Multi_Browser" title="tests.PracticeFormTest" class="method navigator-link" hash-for-method="submitFail">submitFail</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Multi_Browser" title="tests.TextBoxTest" class="method navigator-link" hash-for-method="submitFail">submitFail</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Multi_Browser" title="tests.PracticeFormTest" class="method navigator-link" hash-for-method="submitSuccessfully">submitSuccessfully</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Multi_Browser" title="tests.TextBoxTest" class="method navigator-link" hash-for-method="submitSuccessfully">submitSuccessfully</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Test_Multi_Browser -->
+                    </div> <!-- method-list-content passed suite-Test_Multi_Browser -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -124,10 +124,10 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_Multi_Browser" class="panel Test_Multi_Browser">
-          <div class="suite-Test_Multi_Browser-class-failed">
+          <div class="suite-Test_Multi_Browser-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">tests.PracticeFormTest</span>
+              <img src="passed.png"/>
+              <span class="class-name">tests.TextBoxTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -135,31 +135,8 @@
                   <a name="submitFail">
                   </a> <!-- submitFail -->
                   <span class="method-name">submitFail</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;custom-control custom-radio custom-control-inline&quot;&gt;...&lt;/div&gt; is not clickable at point (936, 462). Other element would receive the click: &lt;input id=&quot;uploadPicture&quot; type=&quot;file&quot; lang=&quot;en&quot; class=&quot;form-control-file&quot;&gt;
-  (Session info: chrome=113.0.5672.93)
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1d6d4f0ef68833bdb6ed5a81c2ca9470, clickElement {id=ba7d7449-f5d2-444e-a78f-5b9e774abab6}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57919}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57919/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (1d6d4f0ef68833bdb6ed5a81c2ca9470)] -&gt; xpath: //label[text()=&apos;Male&apos;]/parent::div]
-Session ID: 1d6d4f0ef68833bdb6ed5a81c2ca9470
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at pages.PracticeFormPage.inputTextForm(PracticeFormPage.java:54)
-	at tests.PracticeFormTest.submitFail(PracticeFormTest.java:28)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
                   <em>
-(TC2 - Submit fail)                  </em>
+(TC2 - Submit invalid format email)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -167,35 +144,12 @@ Session ID: 1d6d4f0ef68833bdb6ed5a81c2ca9470
                   <a name="submitSuccessfully">
                   </a> <!-- submitSuccessfully -->
                   <span class="method-name">submitSuccessfully</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;custom-control custom-radio custom-control-inline&quot;&gt;...&lt;/div&gt; is not clickable at point (936, 462). Other element would receive the click: &lt;input id=&quot;uploadPicture&quot; type=&quot;file&quot; lang=&quot;en&quot; class=&quot;form-control-file&quot;&gt;
-  (Session info: chrome=113.0.5672.93)
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e4748e435350f21cc047619eecd1aa51, clickElement {id=a063c61c-3d61-4319-aff1-a7718a0456ca}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57803}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57803/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (e4748e435350f21cc047619eecd1aa51)] -&gt; xpath: //label[text()=&apos;Male&apos;]/parent::div]
-Session ID: e4748e435350f21cc047619eecd1aa51
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at pages.PracticeFormPage.inputTextForm(PracticeFormPage.java:54)
-	at tests.PracticeFormTest.submitSuccessfully(PracticeFormTest.java:22)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
                   <em>
-(TC1 - Submit successfully)                  </em>
+(TC1 - Submit valid data)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Test_Multi_Browser-class-failed -->
+          </div> <!-- suite-Test_Multi_Browser-class-passed -->
         </div> <!-- panel Test_Multi_Browser -->
         <div panel-name="test-xml-Test_Multi_Browser" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -209,7 +163,7 @@ Session ID: e4748e435350f21cc047619eecd1aa51
   &lt;test thread-count=&quot;5&quot; name=&quot;Chrome&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.PracticeFormTest&quot;/&gt;
+      &lt;class name=&quot;tests.TextBoxTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Chrome --&gt;
 &lt;/suite&gt; &lt;!-- Test Multi Browser --&gt;
@@ -233,6 +187,14 @@ Session ID: e4748e435350f21cc047619eecd1aa51
             <span class="header-content">Groups for Test Multi Browser</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">SmokeTest</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">submitSuccessfully</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Test_Multi_Browser" class="panel">
@@ -251,18 +213,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'submitFail')
-data.setCell(0, 2, 'tests.PracticeFormTest')
-data.setCell(0, 3, 1885);
+data.setCell(0, 1, 'submitSuccessfully')
+data.setCell(0, 2, 'tests.TextBoxTest')
+data.setCell(0, 3, 3715);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'submitSuccessfully')
-data.setCell(1, 2, 'tests.PracticeFormTest')
-data.setCell(1, 3, 1805);
+data.setCell(1, 1, 'submitFail')
+data.setCell(1, 2, 'tests.TextBoxTest')
+data.setCell(1, 3, 2442);
 window.suiteTableData['Test_Multi_Browser']= { tableData: data, tableDiv: 'times-div-Test_Multi_Browser'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Test_Multi_Browser">
               </div> <!-- times-div-Test_Multi_Browser -->
             </div> <!-- times-div -->
@@ -288,34 +250,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.PracticeFormTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.TextBoxTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">openWebsite(Chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">submitSuccessfully</span>
-                <span class="method-start">13594 ms</span>
+                <span class="method-start">11581 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">15403 ms</span>
+                <span class="method-start">15298 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">openWebsite(Chrome)</span>
-                <span class="method-start">15407 ms</span>
+                <span class="method-start">15728 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">submitFail</span>
-                <span class="method-start">23362 ms</span>
+                <span class="method-start">25413 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">25251 ms</span>
+                <span class="method-start">27857 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
